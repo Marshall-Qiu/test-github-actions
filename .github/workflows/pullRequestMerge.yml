@@ -23,13 +23,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: should-not-exec
-        if: ${{github.event.pull_request.head.ref != 'dev'}}
         run: |
           echo "should not be exec"
           echo ${{github.event.pull_request.head.ref}}
+          export GG=123
       - name: prepare-prefix
         run: |
           GITHUB_SHA=${{github.sha}}
+          echo $GG
           echo ${{ toJson(github) }}
           echo ${{github.event.pull_request.head.sha}}
           echo "BRANCH_PREFIX=branch-${GITHUB_SHA:0:7}" >> $GITHUB_ENV
