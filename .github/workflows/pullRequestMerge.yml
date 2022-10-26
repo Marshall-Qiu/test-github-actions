@@ -26,8 +26,8 @@ jobs:
         run: |
           echo "should not be exec"
           echo ${{github.event.pull_request.head.ref}}
-          export GG=123
       - name: prepare-prefix
         run: |
           GITHUB_SHA=${{github.sha}}
+          export GG=123
           echo $GG
