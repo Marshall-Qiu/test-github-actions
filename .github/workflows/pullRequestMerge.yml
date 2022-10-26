@@ -31,8 +31,3 @@ jobs:
         run: |
           GITHUB_SHA=${{github.sha}}
           echo $GG
-          echo ${{ toJson(github) }}
-          echo ${{github.event.pull_request.head.sha}}
-          echo "BRANCH_PREFIX=branch-${GITHUB_SHA:0:7}" >> $GITHUB_ENV
-          echo "PULL_REQUEST_PREFIX=pr${{github.event.number}}" >> $GITHUB_ENV
-    
