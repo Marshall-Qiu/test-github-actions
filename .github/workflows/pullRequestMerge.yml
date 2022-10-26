@@ -23,7 +23,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: should-not-exec
-        if: ${{github.event.pull_request.head.ref}} != 'dev'
+        if: ${{github.event.pull_request.head.ref != 'dev'}}
         run: |
           echo "should not be exec"
           echo ${{github.event.pull_request.head.ref}}
