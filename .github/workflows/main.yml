@@ -24,6 +24,6 @@ jobs:
         run: |
           curl \                                                                                                                
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer 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" \
+          -H "Authorization: Bearer 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" \
           https://api.github.com/repos/netbasequid/canal-flow-ui/pulls
        
