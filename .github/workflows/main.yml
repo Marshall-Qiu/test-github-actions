@@ -15,8 +15,6 @@ jobs:
     if: ${{github.event.ref_type}} == 'branch'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env:
-      PREFIX:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -24,9 +22,8 @@ jobs:
         uses: actions/checkout@v3
       - name: prepare-prefix
         run: |
-          GITHUB_SHA=${{github.sha}}
-          HEAD_SHA=${{github.event.workflow_run.head_sha}}
-          echo ${{ toJson(github) }}
-          echo ${GITHUB_SHA:0:7}
-          echo ${HEAD_SHA:0:7}
+          curl \                                                                                                                      ✔  at 03:36:57 PM 
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer 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" \
+          https://api.github.com/repos/netbasequid/canal-flow-ui/pulls
        
